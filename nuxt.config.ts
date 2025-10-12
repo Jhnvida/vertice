@@ -21,4 +21,11 @@ export default defineNuxtConfig({
     quality: 80,
     format: ["webp", "jpg"],
   },
+
+  runtimeConfig: {
+    public: {
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseKey: process.env.SUPABASE_KEY,
+    },
+  },
 });

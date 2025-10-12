@@ -7,33 +7,30 @@
         >
             <div class="text-xl font-light tracking-tight">Vértice</div>
             <div class="flex items-center gap-8">
-                <NuxtLink
-                    to="/"
+                <a
+                    href="/"
                     class="text-sm font-light hover:text-gray-600 transition-colors"
                 >
                     Projects
-                </NuxtLink>
-
-                <NuxtLink
-                    to="/"
+                </a>
+                <a
+                    href="/"
                     class="text-sm font-light hover:text-gray-600 transition-colors"
                 >
                     Services
-                </NuxtLink>
-
-                <NuxtLink
-                    to="/"
+                </a>
+                <a
+                    href="/"
                     class="text-sm font-light hover:text-gray-600 transition-colors"
                 >
                     About Us
-                </NuxtLink>
-
-                <NuxtLink
-                    to="/"
+                </a>
+                <a
+                    href="/"
                     class="text-sm font-light hover:text-gray-600 transition-colors"
                 >
                     Blog
-                </NuxtLink>
+                </a>
             </div>
         </nav>
     </header>

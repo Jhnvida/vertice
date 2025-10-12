@@ -8,6 +8,7 @@
                     <h3 class="text-xl font-light tracking-tight mb-2">
                         Vértice
                     </h3>
+
                     <p class="text-xs font-light text-gray-500">
                         <Icon name="ic:baseline-copyright" />
                         {{ year }} All rights reserved.

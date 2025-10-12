@@ -8,15 +8,15 @@
             </h1>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                <NuxtLink to="/" v-for="project in projects"
+                <a v-for="project in data" href="/"
                     ><div class="group cursor-pointer relative overflow-hidden">
                         <div
                             class="relative aspect-[4/5] overflow-hidden bg-gray-600/20"
                         >
                             <NuxtImg
-                                :src="project.image"
+                                src=""
+                                :alt="project.image"
                                 fit="cover"
-                                placeholder
                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                             />
                         </div>
@@ -42,35 +42,20 @@
                                 </div>
                             </div>
                         </div></div
-                ></NuxtLink>
+                ></a>
             </div>
         </div>
     </main>
 </template>
 
 <script setup lang="ts">
-interface Project {
-    id: number;
-    name: string;
-    city: string;
-    state: string;
-    image: string;
-}
+import { createClient } from "@supabase/supabase-js";
 
-const projects: Project[] = [
-    {
-        id: 1,
-        name: "Hudson Tower",
-        city: "New York",
-        state: "New York",
-        image: "",
-    },
-    {
-        id: 2,
-        name: "Pacific Heights",
-        city: "San Francisco",
-        state: "California",
-        image: "",
-    },
-];
+const runtimeConfig = useRuntimeConfig();
+const supabase = createClient(
+    runtimeConfig.public.supabaseUrl,
+    runtimeConfig.public.supabaseKey,
+);
+
+const { data, error } = await supabase.from("projects").select("*");
 </script>
