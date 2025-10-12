@@ -16,4 +16,9 @@ export default defineNuxtConfig({
     mode: "css",
     cssLayer: "base",
   },
+
+  image: {
+    quality: 80,
+    format: ["webp", "jpg"],
+  },
 });
