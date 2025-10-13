@@ -8,14 +8,14 @@
             </h1>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                <a v-for="project in data" href="/"
+                <a v-for="project in projects" href="/"
                     ><div class="group cursor-pointer relative overflow-hidden">
                         <div
-                            class="relative aspect-[4/5] overflow-hidden bg-gray-600/20"
+                            class="relative aspect-[5/5] overflow-hidden bg-gray-600/20"
                         >
                             <NuxtImg
-                                src=""
-                                :alt="project.image"
+                                :src="getImageUrl(project.image) || undefined"
+                                :alt="project.name"
                                 fit="cover"
                                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                             />
@@ -49,13 +49,6 @@
 </template>
 
 <script setup lang="ts">
-import { createClient } from "@supabase/supabase-js";
-
-const runtimeConfig = useRuntimeConfig();
-const supabase = createClient(
-    runtimeConfig.public.supabaseUrl,
-    runtimeConfig.public.supabaseKey,
-);
-
-const { data, error } = await supabase.from("projects").select("*");
+const { fetchProjects, getImageUrl } = useProjects();
+const { data: projects, error } = await fetchProjects();
 </script>
