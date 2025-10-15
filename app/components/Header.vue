@@ -1,37 +1,12 @@
 <template>
-    <header
-        class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm"
-    >
-        <nav
-            class="container mx-auto px-6 lg:px-16 py-6 flex items-center justify-between"
-        >
-            <div class="text-xl font-light tracking-tight">Vértice</div>
-            <div class="flex items-center gap-8">
-                <a
-                    href="/"
-                    class="text-sm font-light hover:text-gray-600 transition-colors"
-                >
-                    Projects
-                </a>
-                <a
-                    href="/"
-                    class="text-sm font-light hover:text-gray-600 transition-colors"
-                >
-                    Services
-                </a>
-                <a
-                    href="/"
-                    class="text-sm font-light hover:text-gray-600 transition-colors"
-                >
-                    About Us
-                </a>
-                <a
-                    href="/"
-                    class="text-sm font-light hover:text-gray-600 transition-colors"
-                >
-                    Blog
-                </a>
-            </div>
-        </nav>
+    <header class="w-full border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+            <div class="text-2xl font-bold tracking-tight">Vértice</div>
+            <nav class="flex gap-8">
+                <a href="/" class="text-sm font-medium hover:text-gray-600 transition">Projetos</a>
+                <a href="/" class="text-sm font-medium hover:text-gray-600 transition">Sobre Nós</a>
+                <a href="/" class="text-sm font-medium hover:text-gray-600 transition">Contato</a>
+            </nav>
+        </div>
     </header>
 </template>

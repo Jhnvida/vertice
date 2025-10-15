@@ -1,19 +1,9 @@
 <template>
-    <footer class="bg-gray-50 border-t border-gray-100">
-        <div class="container mx-auto px-6 lg:px-16 py-12">
-            <div
-                class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8"
-            >
-                <div>
-                    <h3 class="text-xl font-light tracking-tight mb-2">
-                        Vértice
-                    </h3>
-
-                    <p class="text-xs font-light text-gray-500">
-                        <Icon name="ic:baseline-copyright" />
-                        {{ year }} All rights reserved.
-                    </p>
-                </div>
+    <footer class="w-full border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-6">
+            <div class="flex items-center justify-between">
+                <p class="text-sm text-gray-600">{{ year }} Vértice.</p>
+                <p class="text-sm text-gray-600">Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
