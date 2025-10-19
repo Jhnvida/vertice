@@ -1,27 +1,19 @@
 <template>
     <section class="w-full grid grid-cols-3 auto-rows-[320px] gap-1">
         <NuxtLink
-            v-for="(project, index) in projects"
+            v-for="(project, index) in projectsList"
             class="group relative overflow-hidden cursor-pointer"
             :class="index == 0 ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1'"
             :key="index"
-            :to="{ name: 'project-id', params: { id: project.id } }"
+            :to="{ name: 'projetos-id', params: { id: project.id } }"
         >
-            <img
+            <NuxtImg
                 :src="project.image"
                 :alt="project.name"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
             />
 
-            <div
-                class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-500 ease-in-out text-white text-base font-bold w-9 h-9 flex items-center justify-center bg-black/40"
-            >
-                {{ String(index + 1).padStart(2, "0") }}
-            </div>
-
-            <div
-                class="absolute bottom-0 left-0 right-0 p-8 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-in-out bg-gradient-to-t from-black/80 to-transparent"
-            >
+            <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
                 <h3 class="text-white text-2xl font-bold mb-1">
                     {{ project.name }}
                 </h3>
@@ -40,7 +32,7 @@ interface Project {
     image: string;
 }
 
-const projects: Project[] = [
+const projectsList: Project[] = [
     {
         id: 1,
         name: "Edifício Azure",
